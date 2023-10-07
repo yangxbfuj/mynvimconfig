@@ -1,6 +1,17 @@
 require'nvim-treesitter.configs'.setup {
   -- 添加不同的语言
-  ensure_installed = {"vim", "html", "bash", "c", "cpp", "javascript", "json", "lua", "python", "java"},
+  ensure_installed = {
+    "vim",
+    "html",
+    "bash",
+    "c",
+    "cpp",
+    "javascript",
+    "json",
+    "lua",
+    "python",
+    "java",
+    "vue"},
 
 
   hightlight = { enable = true },
