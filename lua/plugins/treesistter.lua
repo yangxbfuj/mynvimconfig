@@ -11,12 +11,11 @@ require'nvim-treesitter.configs'.setup {
     "lua",
     "python",
     "java",
-    "vue"},
-
+    "vue"
+  },
 
   hightlight = { enable = true },
   indent = { enable = true },
-
   -- 不同括号颜色区分
   rainbow = {
     enable = true,
