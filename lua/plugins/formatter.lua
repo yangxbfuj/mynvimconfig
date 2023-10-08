@@ -29,6 +29,11 @@ formatter.setup(
     filetype = {
       lua = lua_fomatter,
       java = java_fomatter
+    },
+    ["*"] = {
+      -- "formatter.filetypes.any" defines default configurations for any
+      -- filetype
+      require("formatter.filetypes.any").remove_trailing_whitespace
     }
   }
 )
