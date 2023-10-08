@@ -7,7 +7,7 @@ local lua_fomatter = {
   -- luafmt
   function()
     return {
-      exe = "luafmt",
+      exe = "lua_fmt",
       args = {"--indent-count", 2, "--stdin"},
       stdin = true
     }
@@ -24,11 +24,23 @@ local java_fomatter = {
   end
 }
 
+local python_formater = {
+  function ()
+    return {
+      exe = "autopep8",
+      args = {"-s 4", "-E"},
+      replace = 1,
+      stdin = true
+    }
+  end
+}
+
 formatter.setup(
   {
     filetype = {
       lua = lua_fomatter,
-      java = java_fomatter
+      java = java_fomatter,
+      py = python_formater
     },
     ["*"] = {
       -- "formatter.filetypes.any" defines default configurations for any

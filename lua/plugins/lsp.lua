@@ -16,7 +16,7 @@ require("mason-lspconfig").setup(
     ensure_installed = {
       "lua_ls",
       "pyright",
-      "java_language_server",
+      "jdtls",
       "vuels",
       "html",
       "tsserver",
@@ -31,6 +31,12 @@ local capabilities = require("cmp_nvim_lsp").default_capabilities()
 require("lspconfig").lua_ls.setup {
   capabilities = capabilities
 }
-require("lspconfig").pyright.setup({})
-require("lspconfig").vuels.setup({})
-require("lspconfig").java_language_server.setup({})
+require("lspconfig").pyright.setup({
+  capabilities = capabilities
+})
+require("lspconfig").vuels.setup({
+  capabilities = capabilities
+})
+require("lspconfig").jdtls.setup({
+  capabilities = capabilities
+})
