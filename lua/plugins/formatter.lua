@@ -27,8 +27,8 @@ local java_fomatter = {
 local python_formater = {
   function ()
     return {
-      exe = "autopep8",
-      args = {"-s 4", "-E"},
+      exe = "black",
+      args = {"-q", "-"},
       replace = 1,
       stdin = true
     }
@@ -40,7 +40,7 @@ formatter.setup(
     filetype = {
       lua = lua_fomatter,
       java = java_fomatter,
-      py = python_formater
+      python = python_formater
     },
     ["*"] = {
       -- "formatter.filetypes.any" defines default configurations for any
@@ -52,11 +52,13 @@ formatter.setup(
 
 --配置保存文件自动格式化代码
 vim.api.nvim_exec(
-  [[
-augroup FormatAutogroup
-  autocmd!
-  autocmd BufWritePost * FormatWrite
-augroup END
+[[
+  augroup FormatAutogroup
+    autocmd!
+    autocmd BufWritePost * FormatWrite
+    autocmd User FormatterPre lua print "This will print before formatting"
+    autocmd User FormatterPost lua print "This will print after formatting"
+  augroup END
 ]],
   true
 )
