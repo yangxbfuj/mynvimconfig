@@ -11,7 +11,10 @@ require'nvim-treesitter.configs'.setup {
     "lua",
     "python",
     "java",
-    "vue"
+    "vue",
+    "typescript",
+    "css",
+    "scss"
   },
 
   hightlight = { enable = true },

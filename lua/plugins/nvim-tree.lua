@@ -26,6 +26,7 @@ require("nvim-tree").setup({
         folder = false,
         folder_arrow = true,
       },
+      git_placement = "after",
       glyphs = {
         bookmark = " ",
         folder = {

@@ -34,7 +34,7 @@ return require("packer").startup(
     }
     use "christoomey/vim-tmux-navigator" -- 用ctl-hjkl来定位窗口
     use "nvim-treesitter/nvim-treesitter" -- 语法高亮
-    use "p00f/nvim-ts-rainbow" -- 彩虹括号
+    use "HiPhish/nvim-ts-rainbow2" -- 彩虹括号
     use {
       "williamboman/mason.nvim",
       "williamboman/mason-lspconfig.nvim", -- 这个相当于mason.nvim和lspconfig的桥梁
@@ -62,7 +62,6 @@ return require("packer").startup(
       tag = "0.1.1", -- 文件检索
       requires = {{"nvim-lua/plenary.nvim"}}
     }
-
     use "mhartington/formatter.nvim" -- 格式化插件
     if packer_bootstrap then
       require("packer").sync()
